@@ -56,20 +56,16 @@ public class MessagePersistBenchMarkTest {
         LOGGER.debug("reading test for {} messages on {}", numberOfMessages, label);
 
         Long startWriting = System.nanoTime();
-
         List<Message> messages = messagePersist.retrieveLastMessages(numberOfMessages);
-
         Long endWriting = System.nanoTime();
 
         LOGGER.info("{} - read::: {} messages ::: {} nanoseconds",
                 label, numberOfMessages, (endWriting - startWriting));
 
-        LOGGER.trace("messages: {}", messages);
-
+        messages.forEach(message -> LOGGER.trace("{}", message));
     }
 
     private Message dummyMessage () {
-
         Person person = new Person("Dummy", "dummy@email.com");
         return new Message(person, "ola", LocalDateTime.now());
     }

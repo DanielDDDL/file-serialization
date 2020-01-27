@@ -10,7 +10,7 @@ public class Message implements Serializable {
     private LocalDateTime date;
 
     public Message () {
-
+        //used by jackson
     }
 
     public Message(Person sender, String content, LocalDateTime date) {

@@ -8,7 +8,7 @@ public class Person implements Serializable {
     private String email;
 
     public Person () {
-
+        //used by jackson
     }
 
     public Person(String name, String email) {
